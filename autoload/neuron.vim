@@ -1,5 +1,5 @@
 let g:_neuron_queued_function = []
-let g:_neuron_cache_add_titles = 1
+let g:_neuron_cache_add_titles = 0
 
 func! neuron#add_virtual_titles()
 	if !exists("g:_neuron_zettels_by_id")
@@ -328,7 +328,7 @@ func! s:refresh_cache_callback(data)
 	if g:_neuron_cache_add_titles == 1
 		call neuron#add_virtual_titles()
 	endif
-	let g:_neuron_cache_add_titles = 1
+	" let g:_neuron_cache_add_titles = 1
 
 	if !empty(g:_neuron_queued_function)
 		call call(g:_neuron_queued_function[0], g:_neuron_queued_function[1])
