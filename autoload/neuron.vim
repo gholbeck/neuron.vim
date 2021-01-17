@@ -194,7 +194,7 @@ func! neuron#edit_zettel_new_from_cword()
 
 	" replace cword with a link to the new zettel
 	let l:zettel_id = util#zettel_id_from_path(l:zettel_path)
-	execute "normal! i[[".l:zettel_id."]] "
+	execute "normal! i[[[".l:zettel_id."]]]"
 	call neuron#add_virtual_titles()
 	w
 
@@ -217,7 +217,7 @@ func! neuron#edit_zettel_new_from_visual()
 	""" replace selection with a link to the new zettel
 	let l:zettel_id = util#zettel_id_from_path(l:zettel_path)
 
-	execute "normal! a[[".l:zettel_id."]]"
+	execute "normal! a[[[".l:zettel_id."]]]"
 	call neuron#add_virtual_titles()
 	w
 
